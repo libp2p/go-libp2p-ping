@@ -8,11 +8,11 @@ import (
 
 	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
 
-	host "github.com/ipfs/go-ipfs/p2p/host"
-	inet "github.com/ipfs/go-ipfs/p2p/net"
-	peer "github.com/ipfs/go-ipfs/p2p/peer"
-	logging "github.com/ipfs/go-ipfs/vendor/go-log-v1.0.0"
 	u "github.com/ipfs/go-ipfs/util"
+	logging "github.com/ipfs/go-ipfs/vendor/go-log-v1.0.0"
+	host "github.com/ipfs/go-libp2p/p2p/host"
+	inet "github.com/ipfs/go-libp2p/p2p/net"
+	peer "github.com/ipfs/go-libp2p/p2p/peer"
 )
 
 var log = logging.Logger("ping")

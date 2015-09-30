@@ -5,8 +5,8 @@ import (
 	"time"
 
 	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
-	peer "github.com/ipfs/go-ipfs/p2p/peer"
-	netutil "github.com/ipfs/go-ipfs/p2p/test/util"
+	peer "github.com/ipfs/go-libp2p/p2p/peer"
+	netutil "github.com/ipfs/go-libp2p/p2p/test/util"
 )
 
 func TestPing(t *testing.T) {

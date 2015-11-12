@@ -6,13 +6,13 @@ import (
 	"io"
 	"time"
 
-	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
+	context "golang.org/x/net/context"
 
-	u "github.com/ipfs/go-ipfs/util"
-	logging "github.com/ipfs/go-ipfs/vendor/go-log-v1.0.0"
 	host "github.com/ipfs/go-libp2p/p2p/host"
 	inet "github.com/ipfs/go-libp2p/p2p/net"
 	peer "github.com/ipfs/go-libp2p/p2p/peer"
+	u "util"
+	logging "QmWRypnfEwrgH4k93KEHN5hng7VjKYkWmzDYRuTZeh2Mgh/go-log"
 )
 
 var log = logging.Logger("ping")

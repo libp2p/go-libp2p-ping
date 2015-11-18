@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	context "QmacZi9WygGK7Me8mH53pypyscHzU386aUZXpr28GZgUct/context"
+	context "gx/QmacZi9WygGK7Me8mH53pypyscHzU386aUZXpr28GZgUct/context"
 	peer "github.com/ipfs/go-libp2p/p2p/peer"
 	netutil "github.com/ipfs/go-libp2p/p2p/test/util"
 )

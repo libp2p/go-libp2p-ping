@@ -69,6 +69,7 @@ func (ps *PingService) Ping(ctx context.Context, p peer.ID) (<-chan time.Duratio
 					return
 				}
 
+				ps.Host.Peerstore().RecordLatency(p, t)
 				select {
 				case out <- t:
 				case <-ctx.Done():

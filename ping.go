@@ -18,7 +18,7 @@ var log = logging.Logger("ping")
 
 const PingSize = 32
 
-const ID = "/ipfs/ping"
+const ID = "/ipfs/ping/1.0.0"
 
 type PingService struct {
 	Host host.Host

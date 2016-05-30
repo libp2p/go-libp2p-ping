@@ -20,6 +20,8 @@ const PingSize = 32
 
 const ID = "/ipfs/ping/1.0.0"
 
+const pingTimeout = time.Second * 60
+
 type PingService struct {
 	Host host.Host
 }
@@ -31,7 +33,22 @@ func NewPingService(h host.Host) *PingService {
 }
 
 func (p *PingService) PingHandler(s inet.Stream) {
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
 	buf := make([]byte, PingSize)
+
+	timer := time.NewTimer(pingTimeout)
+	defer timer.Stop()
+
+	go func() {
+		select {
+		case <-timer.C:
+		case <-ctx.Done():
+		}
+
+		s.Close()
+	}()
 
 	for {
 		_, err := io.ReadFull(s, buf)
@@ -45,6 +62,8 @@ func (p *PingService) PingHandler(s inet.Stream) {
 			log.Debug(err)
 			return
 		}
+
+		timer.Reset(pingTimeout)
 	}
 }
 
@@ -57,6 +76,7 @@ func (ps *PingService) Ping(ctx context.Context, p peer.ID) (<-chan time.Duratio
 	out := make(chan time.Duration)
 	go func() {
 		defer close(out)
+		defer s.Close()
 		for {
 			select {
 			case <-ctx.Done():

@@ -4,8 +4,10 @@ import (
 	"testing"
 	"time"
 
-	peer "github.com/ipfs/go-libp2p-peer"
 	netutil "github.com/ipfs/go-libp2p/p2p/test/util"
+
+	peer "github.com/ipfs/go-libp2p-peer"
+	pstore "github.com/ipfs/go-libp2p-peerstore"
 	context "golang.org/x/net/context"
 )
 
@@ -15,7 +17,7 @@ func TestPing(t *testing.T) {
 	h1 := netutil.GenHostSwarm(t, ctx)
 	h2 := netutil.GenHostSwarm(t, ctx)
 
-	err := h1.Connect(ctx, peer.PeerInfo{
+	err := h1.Connect(ctx, pstore.PeerInfo{
 		ID:    h2.ID(),
 		Addrs: h2.Addrs(),
 	})

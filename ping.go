@@ -121,5 +121,5 @@ func ping(s inet.Stream) (time.Duration, error) {
 		return 0, errors.New("ping packet was incorrect!")
 	}
 
-	return time.Now().Sub(before), nil
+	return time.Since(before), nil
 }

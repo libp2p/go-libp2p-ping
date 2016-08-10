@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	netutil "github.com/ipfs/go-libp2p/p2p/test/util"
+	netutil "github.com/libp2p/go-libp2p/p2p/test/util"
 
 	peer "github.com/ipfs/go-libp2p-peer"
 	pstore "github.com/ipfs/go-libp2p-peerstore"

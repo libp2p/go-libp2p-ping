@@ -68,7 +68,7 @@ func (p *PingService) PingHandler(s inet.Stream) {
 }
 
 func (ps *PingService) Ping(ctx context.Context, p peer.ID) (<-chan time.Duration, error) {
-	s, err := ps.Host.NewStream(ctx, ID, p)
+	s, err := ps.Host.NewStream(ctx, p, ID)
 	if err != nil {
 		return nil, err
 	}

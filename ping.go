@@ -2,6 +2,7 @@ package ping
 
 import (
 	"bytes"
+	"context"
 	"errors"
 	"io"
 	"time"
@@ -11,7 +12,6 @@ import (
 	logging "github.com/ipfs/go-log"
 	host "github.com/libp2p/go-libp2p/p2p/host"
 	inet "github.com/libp2p/go-libp2p/p2p/net"
-	context "golang.org/x/net/context"
 )
 
 var log = logging.Logger("ping")

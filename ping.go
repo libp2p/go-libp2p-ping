@@ -10,8 +10,8 @@ import (
 	u "github.com/ipfs/go-ipfs-util"
 	peer "github.com/ipfs/go-libp2p-peer"
 	logging "github.com/ipfs/go-log"
+	host "github.com/libp2p/go-libp2p-host"
 	inet "github.com/libp2p/go-libp2p-net"
-	host "github.com/libp2p/go-libp2p/p2p/host"
 )
 
 var log = logging.Logger("ping")

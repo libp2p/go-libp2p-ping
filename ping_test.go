@@ -7,8 +7,8 @@ import (
 	netutil "github.com/libp2p/go-libp2p/p2p/test/util"
 
 	"context"
-	peer "github.com/ipfs/go-libp2p-peer"
-	pstore "github.com/ipfs/go-libp2p-peerstore"
+	peer "github.com/libp2p/go-libp2p-peer"
+	pstore "github.com/libp2p/go-libp2p-peerstore"
 )
 
 func TestPing(t *testing.T) {

@@ -1,21 +1,21 @@
 package ping
 
 import (
+	"context"
 	"testing"
 	"time"
 
-	netutil "github.com/libp2p/go-libp2p/p2p/test/util"
-
-	"context"
+	netutil "github.com/libp2p/go-libp2p-netutil"
 	peer "github.com/libp2p/go-libp2p-peer"
 	pstore "github.com/libp2p/go-libp2p-peerstore"
+	bhost "github.com/libp2p/go-libp2p/p2p/host/basic"
 )
 
 func TestPing(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	h1 := netutil.GenHostSwarm(t, ctx)
-	h2 := netutil.GenHostSwarm(t, ctx)
+	h1 := bhost.New(netutil.GenSwarmNetwork(t, ctx))
+	h2 := bhost.New(netutil.GenSwarmNetwork(t, ctx))
 
 	err := h1.Connect(ctx, pstore.PeerInfo{
 		ID:    h2.ID(),
